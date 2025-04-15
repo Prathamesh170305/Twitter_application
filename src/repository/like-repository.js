@@ -14,6 +14,9 @@ class LikeRepo extends crudRepo{
             throw error;
         }
     }
+    async delete(id) {
+        return await Like.deleteOne({ _id: id });
+    }
 }
 
 export default LikeRepo;

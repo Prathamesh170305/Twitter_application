@@ -21,13 +21,14 @@ class LikeService{
         const exists=await this.likeRepo.findByUserAndLikeable({
             user:userId,
             onModel:modelType,
-            likeableL:modelId
+            likeable:modelId
         });
-
+        console.log(exists);
         if(exists){
             likeable.likes.pull(exists.id);
             await likeable.save();
-            await exists.remove();
+            await this.likeRepo.delete(exists._id);
+
             var isRemoved=true;
         }
         else{

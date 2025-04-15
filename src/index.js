@@ -26,11 +26,12 @@ app.listen(3000,async ()=>{
     const userRepo=new UserRepo();
     const tweetRepo=new TweetRepository();
     const tweets=await tweetRepo.getAll(0,10)
-    const user=await userRepo.create({
-        email:'prathameshpict@gmail.com',
-        password:'123456',
-        name:'Prathamesh'
-    });
+    // const user=await userRepo.create({
+    //     email:'prathameshpict@gmail.com',
+    //     password:'123456',
+    //     name:'Prathamesh'
+    // });
+    const userId='67fea2c6056bcc0cb57393f9'
     const likeService=new LikeService();
-    await likeService.toggleLike(tweets[0].id,'Tweet',user.id);
+    await likeService.toggleLike(tweets[0].id,'Tweet',userId);
 })
