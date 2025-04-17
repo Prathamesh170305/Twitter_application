@@ -6,7 +6,7 @@ import {connect} from './config/database.js'
 
 import apiRoutes from './routes/index.js'
 
-import service from './services/tweet-service.js'
+//import service from './services/tweet-service.js'
 const app=express();
 
 import UserRepo from './repository/user-repository.js';
